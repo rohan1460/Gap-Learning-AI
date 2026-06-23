@@ -1,245 +1,397 @@
-# GapLearning AI
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=4F46E5&height=200&section=header&text=GapLearning%20AI&fontSize=60&fontColor=ffffff&fontAlignY=38&desc=AI-Powered%20Adaptive%20Learning%20Platform&descAlignY=58&descSize=20" width="100%"/>
+
+<br/>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/React_19-61DAFB?style=for-the-badge&logo=react&logoColor=black" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Gemini_AI-4285F4?style=for-the-badge&logo=google&logoColor=white" />
+  <img src="https://img.shields.io/badge/Framer_Motion-EF008F?style=for-the-badge&logo=framer&logoColor=white" />
+  <img src="https://img.shields.io/badge/Recharts-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white" />
+  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/github/stars/rohan1460/Gap-Learning-AI?style=social" />
+  &nbsp;
+  <img src="https://img.shields.io/github/forks/rohan1460/Gap-Learning-AI?style=social" />
+  &nbsp;
+  <img src="https://img.shields.io/github/issues/rohan1460/Gap-Learning-AI?color=red&style=flat-square" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square" />
+</p>
+
+<br/>
+
+### 🔍 Identify Knowledge Gaps &nbsp;·&nbsp; 📊 Adaptive Assessments &nbsp;·&nbsp; 🗺️ Visual Concept Maps &nbsp;·&nbsp; 🤖 AI Tutoring
+
+<br/>
+
+<a href="#">
+  <img src="https://img.shields.io/badge/🌐%20Live%20Demo-Visit%20Now-4F46E5?style=for-the-badge" />
+</a>
+&nbsp;&nbsp;
+<a href="https://github.com/rohan1460/Gap-Learning-AI/issues">
+  <img src="https://img.shields.io/badge/🐛%20Report%20Bug-Open%20Issue-red?style=for-the-badge" />
+</a>
+&nbsp;&nbsp;
+<a href="https://github.com/rohan1460/Gap-Learning-AI/issues">
+  <img src="https://img.shields.io/badge/✨%20Request%20Feature-Suggest-green?style=for-the-badge" />
+</a>
+
+</div>
+
+<br/>
+
+---
+
+## 💡 What is GapLearning AI?
+
+> **Most learning platforms tell you *what* you got wrong. GapLearning AI tells you *why*.**
+
+GapLearning AI is a full-stack **adaptive educational SaaS platform** that uses AI to detect knowledge gaps at the concept level — not just the question level. It identifies the exact misconception behind every wrong answer, then rebuilds a personalized learning path from the ground up.
+
+<table>
+<tr>
+<td width="50%">
+
+**Traditional Platforms** ❌
+- Mark answers right or wrong
+- Show the correct answer
+- Give the same content to everyone
+- No insight into *why* a student struggles
+
+</td>
+<td width="50%">
+
+**GapLearning AI** ✅
+- Diagnoses misconceptions from distractors
+- Uses Socratic AI to guide discovery
+- Adapts difficulty + topic in real-time
+- Generates concept maps & learning paths
+
+</td>
+</tr>
+</table>
+
+---
+
+## 🖼️ Screenshots
+
+### 🏠 Landing Page
+<div align="center">
+  <img src="./public/screenshots/landing-page.svg" alt="Landing Page" width="90%" style="border-radius: 12px;" />
+</div>
+
+<br/>
+
+### 📊 Student Dashboard & Assessment
+<div align="center">
+  <table>
+    <tr>
+      <td align="center" width="50%">
+        <img src="./public/screenshots/student-dashboard.svg" alt="Student Dashboard" width="100%" style="border-radius: 10px;" />
+        <br/><b>Student Dashboard</b>
+      </td>
+      <td align="center" width="50%">
+        <img src="./public/screenshots/assessment-module.svg" alt="Assessment Module" width="100%" style="border-radius: 10px;" />
+        <br/><b>Adaptive Assessment</b>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<br/>
+
+### 🗺️ Concept Mapping & Teacher Analytics
+<div align="center">
+  <table>
+    <tr>
+      <td align="center" width="50%">
+        <img src="./public/screenshots/concept-mapping.svg" alt="Concept Mapping" width="100%" style="border-radius: 10px;" />
+        <br/><b>Interactive Concept Map</b>
+      </td>
+      <td align="center" width="50%">
+        <img src="./public/screenshots/teacher-dashboard.svg" alt="Teacher Dashboard" width="100%" style="border-radius: 10px;" />
+        <br/><b>Teacher Analytics Dashboard</b>
+      </td>
+    </tr>
+  </table>
+</div>
+
+---
+
+## ✨ Feature Highlights
+
+<details>
+<summary><b>👨‍🎓 Student Portal</b></summary>
+<br/>
+
+| Feature | What it does |
+|---|---|
+| 🔍 **AI Gap Detection** | Identifies specific misconceptions from each wrong answer choice |
+| 📊 **Adaptive Assessments** | Dynamic difficulty, timer, and smooth question navigation |
+| 🗺️ **Interactive Concept Map** | Visual knowledge graph showing dependencies and mastery levels |
+| 🤖 **Socratic AI Tutor** | Conversational Gemini-powered guide that asks questions instead of giving answers |
+| 🎮 **Gamification System** | XP, levels, streaks, and achievement badges to keep motivation high |
+| 🛣️ **Personalized Learning Path** | AI-generated next steps ranked by your weakest prerequisite gaps |
+| 📋 **Detailed Diagnostic Report** | Confidence scores, mastery breakdown, and targeted feedback per concept |
+
+</details>
+
+<details>
+<summary><b>👩‍🏫 Teacher Portal</b></summary>
+<br/>
+
+| Feature | What it does |
+|---|---|
+| 📈 **Class Analytics Dashboard** | Overview of student count, mastery rates, and most common gaps |
+| 📉 **Performance Charts** | Line, bar, and pie charts (Recharts) for visual data storytelling |
+| ⚠️ **At-Risk Detection** | Lists struggling students with their specific misconceptions highlighted |
+| 💡 **AI Teaching Suggestions** | Gemini-generated remediation strategies tailored per subject gap |
+| 📄 **Worksheet Generator** | Auto-generates targeted practice sheets for identified misconceptions |
+| 📥 **Export Reports** | Download class performance summaries for sharing or record-keeping |
+
+</details>
+
+---
+
+## 🧠 How the Adaptive Engine Works
+
+The core intelligence is **fully offline** — no database or API key required. Gemini enhances it optionally for tutoring and worksheets.
+
+```
+Student answers a question
+         │
+         ├──✅ CORRECT ──► Increase difficulty → Advance to next concept
+         │
+         └──❌ WRONG ────► Identify misconception from distractor tag
+                           │
+                           ├── Lower difficulty
+                           ├── Return to weakest prerequisite concept
+                           └── Log gap with confidence penalty
+                                        │
+                              ┌─────────▼──────────┐
+                              │  Mastery Estimator │
+                              │  (weighted scoring) │
+                              └─────────┬──────────┘
+                                        │
+                              ┌─────────▼──────────┐
+                              │   Final Report      │
+                              │  Gaps · Paths · XP  │
+                              └────────────────────┘
+```
+
+**Key properties of the engine:**
+- 🏷️ Every question tagged: concept, difficulty, prerequisites, objective, misconception distractors
+- 📐 Mastery uses difficulty-weighted scoring with a neutral Bayesian prior
+- 🔁 Stateless between sessions — no backend needed for the prototype
+- 📋 Output: strengths, weaknesses, confidence scores, ordered learning path, next assessment
+
+---
+
+## 🛠️ Tech Stack
 
 <div align="center">
 
-![GapLearning AI Banner](./public/screenshots/landing-page.svg)
-
-**AI-Powered Adaptive Learning Platform**
-
-*Identify knowledge gaps · Generate personalized assessments · Map concepts · Recommend learning paths*
-
-[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-6-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-[![Gemini AI](https://img.shields.io/badge/Gemini-AI-4285F4?logo=google&logoColor=white)](https://ai.google.dev/)
-
-[Live Demo](#) · [Student Portal](/student) · [Teacher Portal](/teacher) · [Report Bug](https://github.com/issues)
+| Layer | Technology | Purpose |
+|---|---|---|
+| ⚛️ UI Framework | React 19 + TypeScript | Component-driven, type-safe frontend |
+| ⚡ Build Tool | Vite 8 | Lightning-fast dev server and builds |
+| 🎨 Styling | Tailwind CSS 4 | Utility-first responsive design |
+| 🎞️ Animation | Framer Motion | Smooth page & micro-interactions |
+| 📊 Charts | Recharts | Analytics visualizations |
+| 🔣 Icons | Lucide React | Consistent icon system |
+| 🔀 Routing | React Router DOM | SPA client-side navigation |
+| 🤖 AI Layer | Google Gemini 2.5 Flash | Tutoring, suggestions, worksheets |
+| 🚀 Hosting | Vercel | Zero-config CI/CD deployment |
 
 </div>
 
 ---
 
-## Overview
+## 🎨 Design System
 
-**GapLearning AI** is a production-quality educational SaaS platform that uses artificial intelligence to diagnose *why* students make mistakes — not just *what* they got wrong. Built for internships, hackathons, LinkedIn portfolios, and resume showcases.
+The UI follows a **dark glassmorphism** aesthetic with indigo-purple gradients.
 
-The platform adapts in real time: it detects misconceptions, unlocks prerequisite concepts, guides students through Socratic tutoring, and gives teachers class-wide analytics with AI-generated remediation strategies.
+<div align="center">
 
-## Features
+| Token | Hex | Visual |
+|:---:|:---:|:---:|
+| Primary | `#4F46E5` | ![](https://via.placeholder.com/60x20/4F46E5/4F46E5.png) |
+| Secondary | `#7C3AED` | ![](https://via.placeholder.com/60x20/7C3AED/7C3AED.png) |
+| Background | `#0F172A` | ![](https://via.placeholder.com/60x20/0F172A/0F172A.png) |
+| Surface | `#1E293B` | ![](https://via.placeholder.com/60x20/1E293B/1E293B.png) |
+| Text | `#F8FAFC` | ![](https://via.placeholder.com/60x20/F8FAFC/F8FAFC.png) |
 
-### For Students
-- **AI Gap Detection** — Identifies specific misconceptions from student work and answer choices
-- **Adaptive Assessments** — Dynamic difficulty with progress tracking, timer, and question navigation
-- **Interactive Concept Maps** — Visual knowledge graphs with dependency lines and mastery indicators
-- **Socratic AI Tutor** — Conversational guidance that helps students discover errors themselves
-- **Gamification** — XP, levels, streaks, and achievement badges
-- **Personalized Learning Paths** — AI-recommended next steps based on diagnostic results
+</div>
 
-### For Teachers
-- **Class Analytics Dashboard** — Student counts, mastery rates, and gap frequency
-- **Performance Charts** — Line, bar, and pie charts powered by Recharts
-- **Weak-Topic Detection** — At-risk student lists with specific misconception details
-- **AI Teaching Suggestions** — Actionable remediation strategies per subject
-- **Worksheet Generator** — Targeted practice sheets for specific misconceptions
-- **Export Reports** — Downloadable class performance summaries
+Patterns used: glassmorphism cards · gradient backgrounds · skeleton loaders · empty states · fully responsive at all breakpoints
 
-## Architecture
+---
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                        GapLearning AI                           │
-├─────────────────────────────────────────────────────────────────┤
-│  Landing Page          Student Portal         Teacher Portal    │
-│  ┌──────────┐         ┌──────────────┐       ┌──────────────┐  │
-│  │ Hero     │         │ Dashboard    │       │ Analytics    │  │
-│  │ Features │         │ Concept Map  │       │ Charts       │  │
-│  │ Benefits │         │ Assessment   │       │ AI Suggest.  │  │
-│  │ Reviews  │         │ AI Tutor     │       │ Worksheets   │  │
-│  └──────────┘         └──────┬───────┘       └──────┬───────┘  │
-│                              │                       │          │
-│                    ┌─────────▼───────────────────────▼────────┐ │
-│                    │       Adaptive Intelligence Layer        │ │
-│                    │ Question · Adaptive · Gap · Report engines│ │
-│                    └─────────┬────────────────────────────────┘ │
-│                              │                                   │
-│                    ┌─────────▼─────────┐                          │
-│                    │  Gemini 2.5 Flash │  (optional, API key)    │
-│                    │  Mock Fallback    │  (offline demo mode)    │
-│                    └───────────────────┘                          │
-└─────────────────────────────────────────────────────────────────┘
-```
-
-## Tech Stack
-
-| Layer | Technology |
-|-------|-----------|
-| Framework | React 19 + TypeScript |
-| Build Tool | Vite 8 |
-| Styling | Tailwind CSS 4 |
-| Animation | Framer Motion |
-| Charts | Recharts |
-| Icons | Lucide React |
-| Routing | React Router DOM |
-| AI | Google Gemini 2.5 Flash |
-| Deployment | Vercel |
-
-## Adaptive Intelligence
-
-The assessment works fully offline. Gemini remains optional for the Socratic tutor and worksheet generation, while the core assessment decisions are deterministic and explainable:
-
-1. Every question is tagged with its concept, difficulty, prerequisites, learning objective, and misconception-bearing distractors.
-2. Correct answers increase difficulty or advance to a ready dependent concept.
-3. Incorrect answers identify the distractor misconception, lower the target difficulty, and move to the weakest prerequisite.
-4. Mastery uses difficulty-weighted evidence with a neutral prior; confidence increases as more evidence is collected.
-5. The report returns strengths, weaknesses, concept mastery, confidence, targeted feedback, a graph-ordered learning path, and the next assessment.
-
-The engine is stateful only for the lifetime of an assessment session, so no database is required for the prototype.
-
-## Design System
-
-| Token | Value |
-|-------|-------|
-| Primary | `#4F46E5` |
-| Secondary | `#7C3AED` |
-| Background | `#0F172A` |
-| Surface | `#1E293B` |
-| Text | `#F8FAFC` |
-
-UI patterns include glassmorphism cards, gradient backgrounds, skeleton loading states, empty states, and responsive layouts for desktop, tablet, and mobile.
-
-## Installation
+## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js 18+
-- npm or yarn
 
-### Setup
+- **Node.js** v18 or higher
+- **npm** or **yarn**
+
+### Local Setup
 
 ```bash
-# Clone the repository
-git clone https://github.com/yourusername/gap-learning-ai.git
-cd gap-learning-ai
+# 1. Clone the repo
+git clone https://github.com/rohan1460/Gap-Learning-AI.git
+cd Gap-Learning-AI
 
-# Install dependencies
+# 2. Install dependencies
 npm install
 
-# Start development server
+# 3. Start the dev server
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser.
+Open **http://localhost:5173** — the app runs fully without any API key.
 
-### Optional: Enable Live AI
+### 🤖 Enable Live AI Features (Optional)
 
-1. Get a [Gemini API key](https://aistudio.google.com/apikey)
-2. Open Student or Teacher Portal
-3. Click the settings toggle and paste your API key
-4. The key is stored locally in your browser — never sent to any backend
+| Step | Action |
+|---|---|
+| 1 | Get a free key at [aistudio.google.com/apikey](https://aistudio.google.com/apikey) |
+| 2 | Open the Student or Teacher Portal |
+| 3 | Click the ⚙️ settings toggle and paste your key |
+| 4 | Key is stored **only in your browser** — never sent to any server |
 
-### Build for Production
+### 📦 Build for Production
 
 ```bash
-npm run build
-npm run preview
+npm run build      # Creates optimized build in /dist
+npm run preview    # Preview production build locally
 ```
 
-## Screenshots
+---
 
-| Landing Page | Student Dashboard |
-|:---:|:---:|
-| ![Landing Page](./public/screenshots/landing-page.svg) | ![Student Dashboard](./public/screenshots/student-dashboard.svg) |
-
-| Assessment Module | Concept Mapping |
-|:---:|:---:|
-| ![Assessment](./public/screenshots/assessment-module.svg) | ![Concept Map](./public/screenshots/concept-mapping.svg) |
-
-| Teacher Dashboard |
-|:---:|
-| ![Teacher Dashboard](./public/screenshots/teacher-dashboard.svg) |
-
-## Folder Structure
+## 📂 Project Structure
 
 ```
-gap-learning/
+Gap-Learning-AI/
+│
 ├── public/
-│   └── screenshots/          # App screenshot placeholders
+│   └── screenshots/              # App preview images
+│       ├── landing-page.svg
+│       ├── student-dashboard.svg
+│       ├── assessment-module.svg
+│       ├── concept-mapping.svg
+│       └── teacher-dashboard.svg
+│
 ├── src/
+│   ├── adaptive/                 # 🧠 Core AI engine
+│   │   ├── data/                 #    Knowledge graph + question bank (JSON)
+│   │   ├── engines/              #    Question · Gap · Feedback · Report logic
+│   │   ├── AdaptiveAssessmentEngine.ts   # Session orchestrator
+│   │   ├── models.ts             #    TypeScript contracts
+│   │   └── index.ts              #    Public API export
+│   │
 │   ├── components/
-│   │   ├── assessment/       # Quiz interface, timer, summary
-│   │   ├── concept-map/      # Interactive knowledge graph
-│   │   ├── dashboard/        # Analytics cards, activity timeline
-│   │   ├── landing/          # Hero, features, testimonials
-│   │   ├── layout/           # Navbar, footer
-│   │   ├── teacher/          # Teacher dashboard & charts
-│   │   └── ui/               # Design system (Button, Card, Badge…)
-│   ├── adaptive/
-│   │   ├── data/              # Knowledge graph + local JSON question bank
-│   │   ├── engines/           # Question, gap, feedback, recommendation, report
-│   │   ├── AdaptiveAssessmentEngine.ts # Session workflow facade
-│   │   ├── models.ts          # Typed assessment contracts
-│   │   └── index.ts           # Public engine API
-│   ├── data/                 # Mock data (testimonials, activity)
-│   ├── pages/                # Route-level page components
-│   ├── services/             # AI service layer (Gemini + fallbacks)
-│   ├── types/                # Shared TypeScript types
-│   └── utils/                # Utility helpers
-├── vercel.json               # SPA routing for Vercel
+│   │   ├── assessment/           # Quiz UI, timer, progress bar, summary
+│   │   ├── concept-map/          # Interactive SVG knowledge graph
+│   │   ├── dashboard/            # Stat cards, activity timeline, charts
+│   │   ├── landing/              # Hero, features, testimonials, CTA
+│   │   ├── layout/               # Navbar, footer, page wrappers
+│   │   ├── teacher/              # Teacher analytics & action panels
+│   │   └── ui/                   # Design system: Button, Card, Badge, Modal
+│   │
+│   ├── pages/                    # Route-level page components
+│   ├── services/                 # Gemini AI + mock fallback layer
+│   ├── types/                    # Shared TypeScript types
+│   └── utils/                    # Formatters, helpers, constants
+│
+├── vercel.json                   # SPA routing for Vercel
 ├── vite.config.ts
 └── README.md
 ```
 
-## Deployment on Vercel
+---
 
-1. Push your repository to GitHub
-2. Import the project at [vercel.com/new](https://vercel.com/new)
-3. Vercel auto-detects Vite — no extra configuration needed
-4. The included `vercel.json` handles SPA client-side routing
+## ☁️ Deployment
+
+### Deploy to Vercel (Recommended)
 
 ```bash
-# Or deploy via CLI
+# Via CLI
 npm i -g vercel
 vercel
+
+# Or push to GitHub and import at vercel.com/new
+# Vercel auto-detects Vite — zero config needed ✅
 ```
 
-> **Note:** The Gemini API key is entered client-side by users. For production, consider a serverless proxy to protect API keys.
+> ⚠️ **Security note:** The Gemini API key is entered client-side for prototype purposes. For production, consider a serverless proxy to keep keys private.
 
-## Future Roadmap
+---
 
-- [ ] User authentication (Firebase / Auth0)
-- [ ] Persistent progress with cloud database (Supabase)
-- [ ] Real-time collaborative concept maps
-- [ ] Mobile app (React Native)
-- [ ] Multi-language support
-- [ ] LMS integrations (Google Classroom, Canvas)
-- [ ] Advanced analytics with ML-based gap prediction
-- [ ] Parent/guardian progress reports
+## 🛣️ Roadmap
 
-## Contributing
+```
+v1.0  ✅  Core adaptive engine + student & teacher portals
+v1.1  🔲  User authentication (Firebase / Auth0)
+v1.2  🔲  Cloud progress persistence (Supabase)
+v1.3  🔲  Real-time collaborative concept maps
+v2.0  🔲  Mobile app (React Native)
+v2.1  🔲  Multi-language support (i18n)
+v2.2  🔲  LMS integrations (Google Classroom, Canvas)
+v3.0  🔲  ML-based gap prediction model
+v3.1  🔲  Parent/guardian progress reports
+```
 
-Contributions are welcome! Please follow these steps:
+---
 
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Commit your changes: `git commit -m 'Add amazing feature'`
-4. Push to the branch: `git push origin feature/amazing-feature`
-5. Open a Pull Request
+## 🤝 Contributing
 
-### Development Guidelines
-- Use TypeScript for all new files
-- Follow existing component patterns in `src/components/ui/`
-- Keep components focused and reusable
-- Test responsive layouts at mobile, tablet, and desktop breakpoints
-- Run `npm run lint` before submitting
+Contributions, issues, and feature requests are welcome!
 
-## License
+```bash
+# Fork the repo, then:
+git checkout -b feature/your-feature-name
+git commit -m "feat: add your feature"
+git push origin feature/your-feature-name
+# Open a Pull Request 🎉
+```
 
-MIT License — feel free to use this project for portfolios, hackathons, and learning.
+**Contribution guidelines:**
+- ✅ TypeScript for all new files
+- ✅ Follow component patterns in `src/components/ui/`
+- ✅ Keep components small and reusable
+- ✅ Test at mobile, tablet, and desktop breakpoints
+- ✅ Run `npm run lint` before pushing
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** — free to use for portfolios, hackathons, and learning projects.  
+See [LICENSE](LICENSE) for details.
 
 ---
 
 <div align="center">
 
-Built with ❤️ for the future of personalized education
+<img src="https://capsule-render.vercel.app/api?type=waving&color=4F46E5&height=120&section=footer" width="100%"/>
+
+**Made with ❤️ by [Rohan](https://github.com/rohan1460)**
+
+*Building the future of personalized education — one gap at a time.*
+
+<br/>
+
+⭐ **If GapLearning AI helped you, please star this repo!** ⭐  
+*It keeps the project alive and motivates further development.*
 
 </div>
