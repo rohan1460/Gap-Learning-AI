@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gap Learning AI - Presentation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a0a0f;
+      color: #fff;
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .slide {
+      display: none;
+      width: 100vw;
+      height: 100vh;
+      padding: 60px 80px;
+      position: absolute;
+      top: 0; left: 0;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .slide.active { display: flex; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ============ SLIDE 1: Title ============ */
+    .slide-1 {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 40%, #0a1a3e 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slide-1::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+      top: -100px; right: -100px;
+      border-radius: 50%;
+    }
+
+    .slide-1::after {
+      content: '';
+      position: absolute;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(168, 85, 247, 0.1) 0%, transparent 70%);
+      bottom: -150px; left: -100px;
+      border-radius: 50%;
+    }
+
+    .slide-1 .badge {
+      background: rgba(99, 102, 241, 0.15);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      padding: 8px 24px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #818cf8;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+      z-index: 1;
+    }
+
+    .slide-1 h1 {
+      font-size: 56px;
+      font-weight: 800;
+      line-height: 1.15;
+      max-width: 900px;
+      z-index: 1;
+      background: linear-gradient(135deg, #fff 0%, #c7d2fe 50%, #a78bfa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .slide-1 .subtitle {
+      font-size: 22px;
+      color: #94a3b8;
+      margin-top: 24px;
+      font-weight: 300;
+      max-width: 700px;
+      line-height: 1.6;
+      z-index: 1;
+    }
+
+    .slide-1 .subtitle em {
+      color: #a78bfa;
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    .slide-1 .author {
+      margin-top: 50px;
+      font-size: 16px;
+      color: #64748b;
+      z-index: 1;
+    }
+
+    /* ============ SLIDE 2: Problem ============ */
+    .slide-2 {
+      flex-direction: column;
+      justify-content: center;
+      background: linear-gradient(135deg, #0a0a1a 0%, #1a0a0a 100%);
+      position: relative;
+    }
+
+    .slide-2::before {
+      content: '';
+      position: absolute;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(239, 68, 68, 0.08) 0%, transparent 70%);
+      top: 50px; right: 50px;
+      border-radius: 50%;
+    }
+
+    .section-label {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .slide-2 .section-label { color: #f87171; }
+
+    .slide-2 h2 {
+      font-size: 44px;
+      font-weight: 700;
+      margin-bottom: 50px;
+      line-height: 1.2;
+      max-width: 800px;
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      max-width: 1000px;
+    }
+
+    .problem-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 16px;
+      padding: 30px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .problem-card.bad {
+      border-color: rgba(239, 68, 68, 0.2);
+    }
+
+    .problem-card.good {
+      border-color: rgba(34, 197, 94, 0.2);
+    }
+
+    .problem-card .card-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .problem-card.bad .card-label { color: #f87171; }
+    .problem-card.good .card-label { color: #4ade80; }
+
+    .problem-card h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .problem-card p {
+      font-size: 16px;
+      color: #94a3b8;
+      line-height: 1.6;
+    }
+
+    .math-example {
+      background: rgba(239, 68, 68, 0.08);
+      border: 1px solid rgba(239, 68, 68, 0.15);
+      border-radius: 12px;
+      padding: 20px;
+      font-family: 'Inter', monospace;
+      font-size: 22px;
+      text-align: center;
+      margin-top: 15px;
+      color: #fca5a5;
+    }
+
+    .math-example .wrong { color: #ef4444; font-weight: 700; }
+
+    /* ============ SLIDE 3: Approach ============ */
+    .slide-3 {
+      flex-direction: column;
+      justify-content: center;
+      background: linear-gradient(135deg, #0a0a1a 0%, #0a1a2e 100%);
+    }
+
+    .slide-3 .section-label { color: #60a5fa; }
+
+    .slide-3 h2 {
+      font-size: 44px;
+      font-weight: 700;
+      margin-bottom: 50px;
+    }
+
+    .approach-flow {
+      display: flex;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .flow-step {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 16px;
+      padding: 28px;
+      position: relative;
+    }
+
+    .flow-step .step-num {
+      width: 36px; height: 36px;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+
+    .flow-step h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .flow-step p {
+      font-size: 14px;
+      color: #94a3b8;
+      line-height: 1.6;
+    }
+
+    .flow-arrow {
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      color: #4f46e5;
+      flex-shrink: 0;
+    }
+
+    .tech-stack {
+      display: flex;
+      gap: 16px;
+      margin-top: 40px;
+    }
+
+    .tech-tag {
+      background: rgba(99, 102, 241, 0.1);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #a5b4fc;
+    }
+
+    /* ============ SLIDE 4: Features ============ */
+    .slide-4 {
+      flex-direction: column;
+      justify-content: center;
+      background: linear-gradient(135deg, #0a0a1a 0%, #0a1a1a 100%);
+    }
+
+    .slide-4 .section-label { color: #34d399; }
+
+    .slide-4 h2 {
+      font-size: 44px;
+      font-weight: 700;
+      margin-bottom: 50px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 1100px;
+    }
+
+    .feature-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 16px;
+      padding: 30px;
+    }
+
+    .feature-card .icon {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+
+    .feature-card h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .feature-card p {
+      font-size: 15px;
+      color: #94a3b8;
+      line-height: 1.6;
+    }
+
+    .checkmark {
+      display: inline-block;
+      background: rgba(34, 197, 94, 0.15);
+      color: #4ade80;
+      padding: 2px 10px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-left: 8px;
+    }
+
+    /* ============ SLIDE 5: Demo ============ */
+    .slide-5 {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 50%, #0a1a3e 100%);
+      position: relative;
+    }
+
+    .slide-5::before {
+      content: '';
+      position: absolute;
+      width: 800px; height: 800px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+    }
+
+    .slide-5 .section-label { color: #c084fc; }
+
+    .slide-5 h2 {
+      font-size: 52px;
+      font-weight: 800;
+      margin-bottom: 30px;
+      z-index: 1;
+    }
+
+    .slide-5 .demo-url {
+      background: rgba(99, 102, 241, 0.1);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      padding: 16px 40px;
+      border-radius: 12px;
+      font-size: 20px;
+      color: #a5b4fc;
+      font-weight: 500;
+      z-index: 1;
+      margin-bottom: 50px;
+    }
+
+    .demo-steps {
+      display: flex;
+      gap: 30px;
+      z-index: 1;
+    }
+
+    .demo-step {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 30px;
+      width: 260px;
+      text-align: left;
+    }
+
+    .demo-step .step-num {
+      width: 32px; height: 32px;
+      background: linear-gradient(135deg, #8b5cf6, #6366f1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .demo-step h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .demo-step p {
+      font-size: 13px;
+      color: #94a3b8;
+      line-height: 1.5;
+    }
+
+    /* ============ SLIDE 6: Future ============ */
+    .slide-6 {
+      flex-direction: column;
+      justify-content: center;
+      background: linear-gradient(135deg, #0a0a1a 0%, #0a0a2e 100%);
+    }
+
+    .slide-6 .section-label { color: #fbbf24; }
+
+    .slide-6 h2 {
+      font-size: 44px;
+      font-weight: 700;
+      margin-bottom: 50px;
+    }
+
+    .future-items {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 800px;
+    }
+
+    .future-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .future-item .icon { font-size: 28px; flex-shrink: 0; }
+
+    .future-item h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .future-item p {
+      font-size: 14px;
+      color: #94a3b8;
+      line-height: 1.5;
+    }
+
+    /* ============ SLIDE 7: Thank You ============ */
+    .slide-7 {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 40%, #0a1a3e 100%);
+      position: relative;
+    }
+
+    .slide-7::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(168, 85, 247, 0.12) 0%, transparent 70%);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+    }
+
+    .slide-7 h2 {
+      font-size: 64px;
+      font-weight: 800;
+      z-index: 1;
+      background: linear-gradient(135deg, #fff, #c7d2fe, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .slide-7 .qa {
+      margin-top: 24px;
+      font-size: 22px;
+      color: #94a3b8;
+      z-index: 1;
+    }
+
+    .slide-7 .contact {
+      margin-top: 50px;
+      font-size: 16px;
+      color: #64748b;
+      z-index: 1;
+    }
+
+    .slide-7 .contact a {
+      color: #818cf8;
+      text-decoration: none;
+    }
+
+    /* ============ Controls ============ */
+    .controls {
+      position: fixed;
+      bottom: 30px;
+      right: 40px;
+      display: flex;
+      gap: 12px;
+      z-index: 100;
+    }
+
+    .controls button {
+      width: 48px; height: 48px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .controls button:hover {
+      background: rgba(99, 102, 241, 0.2);
+      border-color: rgba(99, 102, 241, 0.4);
+    }
+
+    .slide-counter {
+      position: fixed;
+      bottom: 38px;
+      left: 40px;
+      font-size: 14px;
+      color: #64748b;
+      z-index: 100;
+    }
+
+    .progress-bar {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #6366f1, #a78bfa);
+      transition: width 0.4s ease;
+      z-index: 100;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- SLIDE 1: Title -->
+  <div class="slide slide-1 active" data-slide="1">
+    <div class="badge">Round 1 Challenge</div>
+    <h1>AI-Powered Adaptive Assessments</h1>
+    <p class="subtitle">Moving from <em>"What"</em> the score is, to <em>"Why"</em> the mistake happened.</p>
+    <p class="author">Gap Learning AI — Prototype Demonstration</p>
+  </div>
+
+  <!-- SLIDE 2: Problem -->
+  <div class="slide slide-2" data-slide="2">
+    <div class="section-label">The Problem</div>
+    <h2>Assessments tell us the score,<br>but not the <span style="color:#f87171">reason</span> behind mistakes.</h2>
+    <div class="problem-grid">
+      <div class="problem-card bad">
+        <div class="card-label">❌ Current System</div>
+        <h3>Score: 6/10</h3>
+        <p>The student got 4 wrong. But which concept is the student struggling with? Nobody knows.</p>
+      </div>
+      <div class="problem-card bad">
+        <div class="card-label">❌ The Hidden Mistake</div>
+        <h3>Student adds fractions wrong</h3>
+        <p>The system marks it wrong but can't identify the root cause misconception.</p>
+        <div class="math-example">
+          ½ + ⅓ = <span class="wrong">2/5</span> ← Added denominators!
+        </div>
+      </div>
+      <div class="problem-card good" style="grid-column: span 2;">
+        <div class="card-label">✅ Our Solution</div>
+        <h3>Identify the exact "Learning Gap" & act on it immediately</h3>
+        <p>Our AI doesn't just mark wrong — it diagnoses the misconception (e.g., "Student adds denominators instead of finding LCM"), then intervenes with an AI tutor in real-time and generates targeted practice worksheets for the teacher.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 3: Approach -->
+  <div class="slide slide-3" data-slide="3">
+    <div class="section-label">Architecture & Approach</div>
+    <h2>How it works</h2>
+    <div class="approach-flow">
+      <div class="flow-step">
+        <div class="step-num">1</div>
+        <h3>Diagnostic Test</h3>
+        <p>Student takes an adaptive assessment. Questions adjust based on performance.</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="step-num">2</div>
+        <h3>Gap Detection</h3>
+        <p>System identifies the specific misconception behind each wrong answer.</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="step-num">3</div>
+        <h3>AI Tutor</h3>
+        <p>Gemini AI intervenes as a chat tutor, guiding the student without giving direct answers.</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="step-num">4</div>
+        <h3>Teacher Insights</h3>
+        <p>Dashboard aggregates class-wide gaps. AI generates targeted worksheets with 1 click.</p>
+      </div>
+    </div>
+    <div class="tech-stack">
+      <div class="tech-tag">⚛️ React + TypeScript</div>
+      <div class="tech-tag">🟢 Node.js + Express</div>
+      <div class="tech-tag">🤖 Google Gemini AI</div>
+      <div class="tech-tag">🚀 Vercel + Render</div>
+    </div>
+  </div>
+
+  <!-- SLIDE 4: Features -->
+  <div class="slide slide-4" data-slide="4">
+    <div class="section-label">What We Built</div>
+    <h2>Key Features</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="icon">🔍</div>
+        <h3>Learning Gap Identification <span class="checkmark">✓ Done</span></h3>
+        <p>Detects specific misconceptions (e.g., "adds denominators") behind wrong answers instead of just marking them incorrect.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🤖</div>
+        <h3>AI Tutor Intervention <span class="checkmark">✓ Done</span></h3>
+        <p>Gemini-powered chatbot activates when a gap is detected. Guides students with hints, not direct answers.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">📝</div>
+        <h3>AI Worksheet Generation <span class="checkmark">✓ Done</span></h3>
+        <p>Teachers can generate targeted practice worksheets for specific gaps with one click using Gemini AI.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">📊</div>
+        <h3>Adaptive Question Engine <span class="checkmark">✓ Done</span></h3>
+        <p>Questions adapt in real-time based on student performance, focusing on areas that need the most attention.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 5: Live Demo -->
+  <div class="slide slide-5" data-slide="5">
+    <div class="section-label">Live Demonstration</div>
+    <h2>Let me show you.</h2>
+    <div class="demo-url">🌐 Deployed & Live on Vercel + Render</div>
+    <div class="demo-steps">
+      <div class="demo-step">
+        <div class="step-num">1</div>
+        <h4>Student Portal</h4>
+        <p>Take a diagnostic test. Intentionally answer a fraction question wrong to trigger gap detection.</p>
+      </div>
+      <div class="demo-step">
+        <div class="step-num">2</div>
+        <h4>AI Tutor Chat</h4>
+        <p>Watch the AI tutor activate and guide the student through the misconception with hints.</p>
+      </div>
+      <div class="demo-step">
+        <div class="step-num">3</div>
+        <h4>Teacher Dashboard</h4>
+        <p>Switch to teacher view. See aggregated gaps and generate a targeted worksheet with one click.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 6: Future -->
+  <div class="slide slide-6" data-slide="6">
+    <div class="section-label">Future Improvements</div>
+    <h2>What we'd build with more time</h2>
+    <div class="future-items">
+      <div class="future-item">
+        <div class="icon">🎙️</div>
+        <div>
+          <h3>Voice Interaction</h3>
+          <p>Allow younger students to speak to the AI tutor naturally using speech-to-text, making it more accessible.</p>
+        </div>
+      </div>
+      <div class="future-item">
+        <div class="icon">📈</div>
+        <div>
+          <h3>Long-Term Analytics</h3>
+          <p>Track how fast students close their learning gaps over a full semester with trend charts and progress reports.</p>
+        </div>
+      </div>
+      <div class="future-item">
+        <div class="icon">🌍</div>
+        <div>
+          <h3>Multilingual Support</h3>
+          <p>Use AI to tutor students in regional languages (Hindi, Tamil, etc.) for better conceptual clarity.</p>
+        </div>
+      </div>
+      <div class="future-item">
+        <div class="icon">🧠</div>
+        <div>
+          <h3>Deeper AI Diagnostics</h3>
+          <p>Use student response patterns over time to predict future learning gaps before they become problems.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 7: Thank You -->
+  <div class="slide slide-7" data-slide="7">
+    <h2>Thank You!</h2>
+    <p class="qa">Questions & Answers</p>
+    <p class="contact">
+      GitHub: <a href="https://github.com/rohan1460/Gap-Learning-AI" target="_blank">rohan1460/Gap-Learning-AI</a>
+    </p>
+  </div>
+
+  <!-- Controls -->
+  <div class="slide-counter" id="slideCounter">1 / 7</div>
+  <div class="controls">
+    <button onclick="prevSlide()" title="Previous (← Arrow Key)">←</button>
+    <button onclick="nextSlide()" title="Next (→ Arrow Key)">→</button>
+  </div>
+
+  <script>
+    let currentSlide = 1;
+    const totalSlides = 7;
+
+    function showSlide(n) {
+      document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+      const target = document.querySelector(`[data-slide="${n}"]`);
+      if (target) {
+        target.classList.add('active');
+        currentSlide = n;
+        document.getElementById('slideCounter').textContent = `${n} / ${totalSlides}`;
+        document.getElementById('progressBar').style.width = `${(n / totalSlides) * 100}%`;
+      }
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides) showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      if (currentSlide > 1) showSlide(currentSlide - 1);
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextSlide(); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); prevSlide(); }
+    });
+
+    // Initialize
+    showSlide(1);
+  </script>
+</body>
+</html>
